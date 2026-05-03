@@ -23,8 +23,7 @@ phases:
     commands:
       - echo Pushing Docker image to ECR...
       - docker push $ECR_REPO:$IMAGE_TAG
-      - docker push $ECR_REPO:latest
-      - printf '[{"name":"course-service","imageUri":"%s"}]' $ECR_REPO:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"app-course-noel","imageUri":"%s"}]' $ECR_REPO:$IMAGE_TAG > imagedefinitions.json
 
 artifacts:
   files:
