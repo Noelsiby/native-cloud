@@ -44,7 +44,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
 
     alb.ingress.kubernetes.io/group.name: student-app
-    alb.ingress.kubernetes.io/healthcheck-path: /health
+    alb.ingress.kubernetes.io/healthcheck-path: /noel-student/health
 spec:
   ingressClassName: alb
   rules:
