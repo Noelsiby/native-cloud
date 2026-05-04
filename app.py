@@ -1,9 +1,11 @@
+from flask_cors import CORS
 import os
 import boto3
 from flask import Flask, jsonify, request
 from botocore.exceptions import ClientError
 
 app = Flask(__name__)
+CORS(app, origins="*")
 
 
 REGION = os.environ.get("AWS_REGION", "ap-south-2")
