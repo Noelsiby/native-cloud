@@ -2,13 +2,9 @@ import os
 import boto3
 from flask import Flask, jsonify, request
 from botocore.exceptions import ClientError
-from aws_xray_sdk.core import xray_recorder
-from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
 app = Flask(__name__)
 
-xray_recorder.configure(service="course-service")
-XRayMiddleware(app, xray_recorder)
 
 REGION = os.environ.get("AWS_REGION", "ap-south-2")
 
