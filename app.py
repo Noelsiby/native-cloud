@@ -15,7 +15,7 @@ CORS(
 REGION = os.environ.get("AWS_REGION", "ap-south-2")
 
 dynamodb = boto3.resource("dynamodb", region_name=REGION)
-courses_table = dynamodb.Table("Courses")
+courses_table = dynamodb.Table("noel-courses")
 
 
 @app.route("/noel-student/health")
