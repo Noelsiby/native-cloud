@@ -5,7 +5,11 @@ from flask import Flask, jsonify, request
 from botocore.exceptions import ClientError
 
 app = Flask(__name__)
-CORS(app, origins="*")
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    supports_credentials=True
+)
 
 
 REGION = os.environ.get("AWS_REGION", "ap-south-2")
